@@ -1,0 +1,20 @@
+﻿<div id="spa">
+  <header>
+    <h1 class="main-title"><a href="#" data-bind="text: app.title"></a></h1>
+    <div class="toolbar">
+      <a href="#help">Xomega SPA Help</a>
+    </div>
+    <nav class="navbar">
+      <ul role="menubar" data-bind="foreach: router.navigationModel">
+        <li role="menuitem"><a data-bind="css: { active: isActive }, attr: { href: hash }, text: title"></a></li>
+      </ul>
+      <div class="clear"></div>
+    </nav>
+  </header>
+  <section id="main" data-bind="router: {}"></section>
+  <footer>
+    <div class="copyright">Copyright © Your Company 2015. All Rights Reserved.</div>
+    <div class="attribution">Powered by <a href="http://xomega.net">Xomega.Net</a></div>
+  </footer>
+  <div class="overlay"></div>
+</div>

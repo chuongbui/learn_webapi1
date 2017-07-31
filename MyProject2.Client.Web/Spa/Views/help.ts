@@ -1,0 +1,4 @@
+class Help {
+}
+
+export = Help;

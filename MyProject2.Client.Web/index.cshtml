@@ -1,0 +1,26 @@
+﻿@using System.Web
+@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Title -->
+  <title>MyProject2</title>
+  <!-- Meta -->
+  <meta charset="utf-8" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Styles bundle -->
+  @Styles.Render("~/Content/css")
+  <!-- Scripts -->
+</head>
+<body>
+  <!-- Durandal SPA host -->
+  <div id="applicationHost">
+    <!-- Place here any content which you want to show while Durandal app is starting up. -->
+  </div>
+  <!-- Scripts bundle -->
+  @Scripts.Render("~/Scripts/include")
+  <!-- Main script -->
+  <script src="Scripts/require.js" data-main="Spa/main"></script>
+</body>
+</html>

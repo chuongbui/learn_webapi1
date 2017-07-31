@@ -1,0 +1,16 @@
+<div class="form widget">
+  <div data-part="header" class="widget-header">
+    <h2 data-part="title">
+      <span data-bind="text: settings.title"></span>
+      <span data-bind="visible: settings.modified">*</span>
+    </h2>
+    <div data-part="toolbar" class="widget-toolbar">
+      <div data-part="ctlClose" data-bind="click: close, visible: dialog" class="widget-toolbar-control">
+        <i class="fa fa-times"></i>
+      </div>
+    </div>
+  </div>
+  <div data-part="body" class="widget-body">
+    <div data-part="content"></div>
+  </div>
+</div>

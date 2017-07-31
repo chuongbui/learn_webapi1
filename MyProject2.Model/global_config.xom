@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.xomega.net/omodel"
+        xmlns:clr="http://www.xomega.net/clr"
+        xmlns:edm="http://www.xomega.net/edm"
+        xmlns:sql="http://www.xomega.net/sql"
+        xmlns:xfk="http://www.xomega.net/framework"
+        xmlns:wcf="http://www.xomega.net/wcf"
+        xmlns:ui="http://www.xomega.net/ui">
+
+  <wcf:services namespace="MyProject2.Services" implNamespace="MyProject2.Entities.Services"
+                tsOutputPath="../MyProject2.Client.Web/Spa/ServiceContracts/{Module/}_{File}">
+
+    <!--TODO: add WCF endpoint configurations such as this one -->
+
+    <wcf:endpoint binding="netTcpBinding" bindingConfiguration="maxNetTcp" baseLocalAddress="net.tcp://localhost:8002/"/>
+
+  </wcf:services>
+
+  <xfk:data-objects namespace="MyProject2.Client.Objects"
+                tsOutputPath="../MyProject2.Client.Web/Spa/DataObjects/{Module/}_DO{File}"/>
+
+  <xfk:enumerations namespace="MyProject2.Enumerations"/>
+  <edm:entities modelName="MyProject2"/>
+</config>

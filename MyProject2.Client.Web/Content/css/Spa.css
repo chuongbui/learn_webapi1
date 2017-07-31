@@ -1,0 +1,618 @@
+﻿
+/* DOCUMENT */
+
+html {
+  font-size: 125%; /* 20px | Note: IE can't handle rounding of 62.5% for solid 10px */
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+  font-size: 0.65em;
+  background-color: #b6b7bc;
+  color: #000;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0px;
+  text-transform: none;
+  font-variant: small-caps;
+  font-weight: 200;
+  color: #666;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+h5, h6 {
+  font-size: 1em;
+}
+
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2 {
+  margin-top: 0px;
+}
+
+/* Links */
+
+a:link, a:visited {
+  color: #034af3;
+}
+
+a:hover {
+  color: #1d60ff;
+  text-decoration: none;
+}
+
+a:active {
+  color: #034af3;
+}
+
+/* Paragraph */
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.6em;
+}
+
+/* Text */
+
+.bold {
+  font-weight: bold;
+}
+
+/* APP HOST */
+
+html, body, #applicationHost {
+  height: 100%;
+}
+
+/* SHELL */
+
+#spa {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  background-color: #fff;
+}
+
+/* HEADER */
+
+#spa > header {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+#spa > header a {
+  text-decoration: none;
+}
+
+/* Title */
+
+h1.main-title {
+  margin: 0;
+  padding: 0 20px;
+  line-height: 2.5rem;
+  background-color: #4b6c9e;
+}
+
+h1.main-title a {
+  color: #f9f9f9;
+}
+
+/* Toolbar */
+
+.toolbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0 20px 0 10px;
+  line-height: 2.5rem;
+  background-color: #4b6c9e;
+}
+
+.toolbar a {
+  color: #b9c8e0;
+}
+
+.toolbar a:hover {
+  color: #f9f9f9;
+}
+
+/* Navbar */
+
+.navbar {
+  clear: both;
+  padding: 4px 8px;
+  background-color: #3a4f63;
+}
+
+.navbar ul {
+  float: left;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar ul li {
+  float: left;
+  position: relative;
+  margin: 0;
+}
+
+.navbar ul li a, .navbar ul li a:visited {
+  display: block;
+  border: 1px solid #4e667d;
+  padding: 3px 20px;
+  line-height: 0.9rem;
+  background-color: #465c71;
+  color: #dde4ec;
+}
+
+.navbar ul li a:hover {
+  background-color: #bfcbd6;
+  color: #465c71;
+}
+
+.navbar ul li a:active {
+  background-color: #465c71;
+  color: #cfdbe6;
+}
+
+/* MAIN */
+
+#spa > #main {
+  padding: 13px 13px calc(2rem + 13px);
+}
+
+/* FOOTER */
+
+#spa > footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #3a4f63;
+  line-height: 2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #b6b7bc;
+  color: #4e5766;
+  z-index: 2;
+}
+
+.copyright {
+  padding: 0 10px;
+}
+
+.attribution {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  padding: 0 10px;
+  text-align: right;
+  background-color: #b6b7bc;
+}
+
+/* WIDGETS */
+
+.widget {
+  overflow: hidden;
+}
+
+.widget-header {
+  position: relative;
+  white-space: nowrap;
+}
+
+.widget-header h2, .widget-header h3 {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.widget-toolbar {
+  font-size: 1.1em;
+}
+
+.widget-toolbar-control {
+  cursor: pointer;
+}
+
+.widget-body {
+  padding: 1em;
+}
+
+.widget fieldset {
+  margin: 0 0 5px;
+  padding: 0;
+  border: none;
+}
+
+/* Form */
+
+.form {
+  border: 3px solid #465c71;
+  box-shadow: 0 0 20px 5px #aaa;
+}
+
+.form > .widget-header {
+  min-height: 1.4em;
+  padding: 0 7px 3px;
+  line-height: 1.4em;
+  background-color: #465c71;
+  color: #fff;
+}
+
+.form > .widget-header h2 {
+  color: #fff;
+}
+
+.form > .widget-header .widget-toolbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 7px;
+}
+
+/* Panel */
+
+.panel {
+  margin-bottom: 1em;
+  border: 1px solid #5d7b9d;
+}
+
+.panel > .widget-header {
+  min-height: 1.7em;
+  line-height: 1.7em;
+  padding: 0 7px 1px;
+  background-color: #5d7b9d;
+  color: #fff;
+  cursor: pointer;
+}
+
+.panel > .widget-header .widget-toolbar {
+  float: left;
+  padding-right: 7px;
+}
+
+.panel > .widget-header h3 {
+  float: left;
+  color: #fff;
+}
+
+/* Pager */
+
+.pager {
+  margin-top: 1em;
+}
+
+.pager > * {
+  margin-bottom: 0.5em;
+}
+
+.pagination {
+  display: table;
+  width: 100%;
+  white-space: nowrap;
+  color: #5d7b9d;
+}
+
+.pagination > * {
+  display: table-cell;
+  overflow: hidden;
+}
+
+.pgn-summary {
+  width: 30%;
+  text-align: left;
+}
+
+.pgn-pages {
+  width: 40%;
+  padding: 0 7px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.pgn-pages ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pgn-pages ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 1px;
+}
+
+.pgn-pages a {
+  text-decoration: none;
+}
+
+.pgn-pages a.disabled {
+  color: grey;
+  cursor: default;
+}
+
+.pgn-pages a.active {
+  color: grey;
+  cursor: default;
+}
+
+.pgn-page-size {
+  width: 30%;
+  text-align: right;
+}
+
+.pgn-page-size select {
+  margin-left: 0.5em;
+}
+
+.pager .grid {
+  margin: 0;
+}
+
+/* Message list */
+
+.msglist ul {
+  margin-top: 0;
+}
+
+/* FORMS */
+
+/* Title */
+
+.title {
+  float: left;
+  display: block;
+  text-align: left;
+}
+
+/* Columns */
+
+.leftCol {
+  margin: 12px 8px 8px;
+  padding: 6px 0px;
+  width: 200px;
+  min-height: 200px;
+}
+
+/* Fieldset */
+
+fieldset {
+  margin: 1em 0px;
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+fieldset p {
+  margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label {
+  display: block;
+}
+
+fieldset label.inline {
+  display: inline;
+}
+
+legend {
+  padding: 2px 4px 8px 4px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+fieldset .fieldColumn:nth-child(even) {
+  padding-left: 5px;
+}
+
+/* Inputs */
+
+input:not([type]), input[type="text"] {
+  width: 150px;
+}
+
+input.textEntry, input.passwordEntry {
+  width: 320px;
+  border: 1px solid #ccc;
+}
+
+input.datetime {
+  width: 125px;
+}
+
+input.date, input.time {
+  width: 70px;
+}
+
+input.decimal, input.integer {
+  width: 60px;
+}
+
+input.boolean {
+  margin-left: 0;
+}
+
+/* Grid */
+
+.grid {
+  width: 100%;
+  margin: 1em 0 0.5em;
+  border-collapse: collapse;
+  color: #333333;
+}
+
+.grid caption {
+  border: 1px solid #5d7b9d;
+  padding: 0 7px;
+  line-height: 1.8em;
+  background-color: aliceblue;
+  color: #5d7b9d;
+}
+
+.applied-criteria {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.applied-criteria h4 {
+  display: inline-block;
+  margin: 0;
+  font-weight: 600;
+  color: #5d7b9d;
+}
+
+.applied-criteria h4::after {
+    content: "\00a0-\00a0";
+}
+
+.field-criteria::after {
+  content: "; ";
+}
+
+.field-criteria:last-child::after {
+  content: "";
+}
+
+.fc-label::after {
+  content: ":";
+}
+
+.fc-operator:before, .fc-datum:before {
+  content: " ";
+}
+
+.fc-operator, .fc-data {
+  color: #666;
+}
+
+.fc-operator {
+  font-style: italic;
+}
+
+.fc-data {
+  font-weight: 600;
+}
+
+.fc-datum::after {
+  content: " and";
+  font-weight: normal;
+}
+
+.fc-datum:last-child::after {
+  content: "";
+}
+
+.grid td, .grid th {
+  padding: 4px;
+}
+
+.grid thead tr {
+  font-weight: bold;
+  background-color: #5d7b9d;
+  color: #fff;
+}
+
+.grid tbody tr:nth-child(odd) {
+  background-color: #f7f6f3;
+  color: #333;
+}
+
+.grid tbody tr:nth-child(even) {
+  background-color: #fff;
+  color: #284775;
+}
+
+/* Buttons */
+
+.form-buttons {
+  margin-top: 0.5em;
+  white-space: nowrap;
+}
+
+.form-buttons > * {
+  margin: 0 5px;
+}
+
+.form-buttons > *:first-child {
+  margin-left: 0;
+}
+
+.form-buttons > *:last-child {
+  margin-right: 0;
+}
+
+/* Errors */
+
+.failureNotification {
+  font-size: 1.2em;
+  color: Red;
+}
+
+/* DIALOGS */
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 610px;
+  max-width: calc(100% - 6px);
+  max-height: calc(100% - 6px);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 999;
+}
+
+@media screen and (max-width: 640px) {
+  .dialog {
+    min-width: calc(100% - 6px);
+    max-width: calc(100% - 6px);
+    max-height: calc(100% - 6px);
+  }
+}
+
+/* OVERLAY */
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1;
+}
+
+/* LAYOUT */
+
+.clear {
+  clear: both;
+}
