@@ -1,48 +1,138 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
-  <!-- EF Runtime content -->
-  <edmx:Runtime>
-    <!-- SSDL content -->
-    <edmx:StorageModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="EntityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
-        <EntityContainer Name="EntityModelTargetContainer" >
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
-    <!-- CSDL content -->
-    <edmx:ConceptualModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EntityModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="EntityModelContainer" annotation:LazyLoadingEnabled="true">
-        </EntityContainer>
-      </Schema>
-    </edmx:ConceptualModels>
-    <!-- C-S mapping content -->
-    <edmx:Mappings>
-      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-        <Alias Key="Model" Value="EntityModel" />
-        <Alias Key="Target" Value="EntityModel.Store" />
-        <EntityContainerMapping CdmEntityContainer="EntityModelContainer" StorageEntityContainer="EntityModelTargetContainer">
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
-  </edmx:Runtime>
-  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
-    <edmx:Connection>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </DesignerInfoPropertySet>
-    </edmx:Connection>
-    <edmx:Options>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx" Version="2.0">
+   <edmx:Runtime>
+      <edmx:StorageModels>
+         <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl"
+                 xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator"
+                 Namespace="MyProject2Model.Store"
+                 Alias="Self"
+                 Provider="System.Data.SqlClient"
+                 ProviderManifestToken="2008">
+            <EntityContainer Name="MyProject2ModelStoreContainer">
+               <EntitySet Name="TblUser" EntityType="Self.TblUser" store:Type="Tables" Schema="dbo"/>
+               <EntitySet Name="cars" EntityType="Self.cars" store:Type="Tables" Schema="dbo"/>
+               <EntitySet Name="testt" EntityType="Self.testt" store:Type="Tables" Schema="dbo"/>
+            </EntityContainer>
+            <EntityType Name="TblUser">
+               <Key>
+                  <PropertyRef Name="Id"/>
+               </Key>
+               <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity"/>
+               <Property Name="FirstName" Type="nvarchar" MaxLength="250"/>
+               <Property Name="LastName" Type="nvarchar" MaxLength="250"/>
+               <Property Name="Gender" Type="nvarchar" MaxLength="250"/>
+            </EntityType>
+            <EntityType Name="cars">
+               <Key>
+                  <PropertyRef Name="id"/>
+               </Key>
+               <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity"/>
+               <Property Name="name" Type="nvarchar" MaxLength="50"/>
+               <Property Name="quantity" Type="numeric" Precision="18" Scale="0"/>
+               <Property Name="type" Type="nvarchar" MaxLength="50"/>
+            </EntityType>
+            <EntityType Name="testt">
+               <Key>
+                  <PropertyRef Name="ID"/>
+               </Key>
+               <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity"/>
+               <Property Name="Test1" Type="int"/>
+               <Property Name="test2" Type="nchar" MaxLength="10"/>
+            </EntityType>
+         </Schema>
+      </edmx:StorageModels>
+      <edmx:ConceptualModels>
+         <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm"
+                 xmlns:ns0="http://schemas.microsoft.com/ado/2009/02/edm/annotation"
+                 Namespace="MyProject2Model"
+                 Alias="Self"
+                 ns0:UseStrongSpatialTypes="false">
+            <EntityContainer Name="MyProject2Entities" ns0:LazyLoadingEnabled="true">
+               <EntitySet Name="Cars" EntityType="Self.Cars"/>
+               <EntitySet Name="TblUser" EntityType="Self.TblUser"/>
+               <EntitySet Name="Testt" EntityType="Self.Testt"/>
+            </EntityContainer>
+            <EntityType Name="Cars">
+               <Key>
+                  <PropertyRef Name="Id"/>
+               </Key>
+               <Property Name="Id" ns0:StoreGeneratedPattern="Identity" Type="Int32" Nullable="false"/>
+               <Property Name="Name" Type="String"/>
+               <Property Name="Quantity" Type="Decimal"/>
+               <Property Name="Type" Type="String"/>
+            </EntityType>
+            <EntityType Name="TblUser">
+               <Key>
+                  <PropertyRef Name="Id"/>
+               </Key>
+               <Property Name="Id" ns0:StoreGeneratedPattern="Identity" Type="Int32" Nullable="false"/>
+               <Property Name="FirstName" Type="String"/>
+               <Property Name="LastName" Type="String"/>
+               <Property Name="Gender" Type="String"/>
+            </EntityType>
+            <EntityType Name="Testt">
+               <Key>
+                  <PropertyRef Name="Id"/>
+               </Key>
+               <Property Name="Id" ns0:StoreGeneratedPattern="Identity" Type="Int32" Nullable="false"/>
+               <Property Name="Test1" Type="Int32"/>
+               <Property Name="Test2" Type="String"/>
+            </EntityType>
+         </Schema>
+      </edmx:ConceptualModels>
+      <edmx:Mappings>
+         <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+            <EntityContainerMapping StorageEntityContainer="MyProject2ModelStoreContainer"
+                                    CdmEntityContainer="MyProject2Entities">
+               <EntitySetMapping Name="Cars">
+                  <EntityTypeMapping TypeName="MyProject2Model.Cars">
+                     <MappingFragment StoreEntitySet="cars">
+                        <ScalarProperty Name="Id" ColumnName="id"/>
+                        <ScalarProperty Name="Name" ColumnName="name"/>
+                        <ScalarProperty Name="Quantity" ColumnName="quantity"/>
+                        <ScalarProperty Name="Type" ColumnName="type"/>
+                     </MappingFragment>
+                  </EntityTypeMapping>
+               </EntitySetMapping>
+               <EntitySetMapping Name="TblUser">
+                  <EntityTypeMapping TypeName="MyProject2Model.TblUser">
+                     <MappingFragment StoreEntitySet="TblUser">
+                        <ScalarProperty Name="Id" ColumnName="Id"/>
+                        <ScalarProperty Name="FirstName" ColumnName="FirstName"/>
+                        <ScalarProperty Name="LastName" ColumnName="LastName"/>
+                        <ScalarProperty Name="Gender" ColumnName="Gender"/>
+                     </MappingFragment>
+                  </EntityTypeMapping>
+               </EntitySetMapping>
+               <EntitySetMapping Name="Testt">
+                  <EntityTypeMapping TypeName="MyProject2Model.Testt">
+                     <MappingFragment StoreEntitySet="testt">
+                        <ScalarProperty Name="Id" ColumnName="ID"/>
+                        <ScalarProperty Name="Test1" ColumnName="Test1"/>
+                        <ScalarProperty Name="Test2" ColumnName="test2"/>
+                     </MappingFragment>
+                  </EntityTypeMapping>
+               </EntitySetMapping>
+            </EntityContainerMapping>
+         </Mapping>
+      </edmx:Mappings>
+   </edmx:Runtime>
+   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+      <edmx:Connection>
+         <DesignerInfoPropertySet>
+            <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly"/>
+         </DesignerInfoPropertySet>
+      </edmx:Connection>
+      <edmx:Options>
+         <DesignerInfoPropertySet>
+            <DesignerProperty Name="ValidateOnBuild" Value="true"/>
+            <DesignerProperty Name="EnablePluralization" Value="True"/>
         
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+            <DesignerProperty Name="CodeGenerationStrategy" Value="None"/>
         
-      </DesignerInfoPropertySet>
-    </edmx:Options>
-    <!-- Diagram content (shape and connector positions) -->
+         </DesignerInfoPropertySet>
+      </edmx:Options>
+      <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
     </edmx:Diagrams>
   </edmx:Designer>

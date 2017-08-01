@@ -1,4 +1,4 @@
-﻿using MyProject2.Services;
+using MyProject2.Services;
 
 namespace MyProject2.Entities
 {
@@ -12,6 +12,7 @@ namespace MyProject2.Entities
         /// </summary>
         public static void RegisterTypes()
         {
+            DI.RegisterType<ICarsService, Services.CarsService>();
             // GENPOINT - generated code will be inserted here. DO NOT REMOVE this line!
         }
     }

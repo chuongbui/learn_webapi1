@@ -26,7 +26,7 @@ namespace MyProject2.Entities
         {
         }
 
-        public static void EnsureRegistered() { }
+        public static void EnsureRegistered() {}
     }
 
 }
