@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx" Version="2.0">
    <edmx:Runtime>
       <edmx:StorageModels>
@@ -134,6 +134,11 @@
       </edmx:Options>
       <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+      <Diagram DiagramId="70fcc0309afc48dea70479055dd983b3" Name="Diagram1">
+        <EntityTypeShape EntityType="MyProject2Model.Cars" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyProject2Model.TblUser" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyProject2Model.Testt" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
