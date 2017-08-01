@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://www.xomega.net/omodel" xmlns:xfk="http://www.xomega.net/framework"
+        xmlns:wcf="http://www.xomega.net/wcf"
+        xmlns:rest="http://www.xomega.net/rest"
+        xmlns:ui="http://www.xomega.net/ui"
+        xmlns:asp="clr-namespace:System.Web.UI.WebControls"
+        xmlns:sql="http://www.xomega.net/sql"
+        xmlns:clr="http://www.xomega.net/clr"
+        xmlns:edm="http://www.xomega.net/edm">
+  <types>
+    <type name="testt" base="integer key"/>
+  </types>
+  <objects>
+    <object name="testt">
+      <fields>
+        <field name="id" type="testt" key="serial" required="true">
+          <config>
+            <sql:column name="ID"/>
+          </config>
+        </field>
+        <field name="test1" type="integer">
+          <config>
+            <sql:column name="Test1"/>
+          </config>
+        </field>
+        <field name="test2" type="code">
+          <config>
+            <sql:column name="test2"/>
+          </config>
+        </field>
+      </fields>
+      <config>
+        <sql:table name="testt"/>
+      </config>
+    </object>
+  </objects>
+</module>

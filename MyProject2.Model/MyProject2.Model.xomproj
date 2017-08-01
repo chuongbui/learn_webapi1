@@ -5,14 +5,11 @@
     </ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Model</Configuration>
     <Database>sqlsrv</Database>
-    <DbVersion>
-    </DbVersion>
-    <DbConnection>
-    </DbConnection>
+    <DbVersion>12.0</DbVersion>
+    <DbConnection>Provider=SQLNCLI11;Persist Security Info=False;User ID=sa;Password=123456;Initial Catalog=test;Data Source=192.168.11.36;Initial File Name="";Server SPN=""</DbConnection>
     <DbExcludeTables>
     </DbExcludeTables>
-    <DbCase>
-    </DbCase>
+    <DbCase>camel</DbCase>
     <DbTimeout>
     </DbTimeout>
     <Name>MyProject2.Model</Name>
@@ -575,6 +572,10 @@
     <XomFile Include="Framework\base_types.xom" />
     <XomFile Include="Framework\operators.xom" />
     <XomFile Include="global_config.xom" />
+    <XomFile Include="Import\cars.xom" />
+    <XomFile Include="Import\tbl_user.xom" />
+    <XomFile Include="Import\testt.xom" />
+    <XomFile Include="Import\_types.xom" />
   </ItemGroup>
   <Import Project="$(XomegaHome14)Xomega.targets" />
 </Project>

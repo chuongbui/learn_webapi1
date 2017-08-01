@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://www.xomega.net/omodel" xmlns:xfk="http://www.xomega.net/framework"
+        xmlns:wcf="http://www.xomega.net/wcf"
+        xmlns:rest="http://www.xomega.net/rest"
+        xmlns:ui="http://www.xomega.net/ui"
+        xmlns:asp="clr-namespace:System.Web.UI.WebControls"
+        xmlns:sql="http://www.xomega.net/sql"
+        xmlns:clr="http://www.xomega.net/clr"
+        xmlns:edm="http://www.xomega.net/edm">
+  <types>
+    <type name="cars" base="integer key">
+      <config>
+        <ui:web-control use-in-grid="true">
+          <asp:HyperLink runat="server" NavigateUrl="~/Gen/_CarsObjectPage.aspx?Id={value}"/>
+        </ui:web-control>
+        <ui:html-control use-in-grid="true">
+          <a xmlns="http://www.w3.org/1999/xhtml" href="CarsObject/{value}"/>
+        </ui:html-control>
+      </config>
+    </type>
+  </types>
+  <objects>
+    <object name="cars">
+      <fields>
+        <field name="id" type="cars" key="serial" required="true">
+          <config>
+            <sql:column name="id"/>
+          </config>
+        </field>
+        <field name="name" type="string50">
+          <config>
+            <sql:column name="name"/>
+          </config>
+        </field>
+        <field name="quantity" type="numeric_18_0">
+          <config>
+            <sql:column name="quantity"/>
+          </config>
+        </field>
+        <field name="type" type="string50">
+          <config>
+            <sql:column name="type"/>
+          </config>
+        </field>
+      </fields>
+      <operations>
+        <operation name="read">
+          <input>
+            <param name="id"/>
+            <config>
+              <xfk:data-object class="CarsObject"/>
+            </config>
+          </input>
+          <output>
+            <param name="name"/>
+            <param name="quantity"/>
+            <param name="type"/>
+            <config>
+              <xfk:add-to-object class="CarsObject"/>
+            </config>
+          </output>
+          <config>
+            <rest:method verb="GET" uri-template="cars/{id}"/>
+          </config>
+          <doc>
+            <summary>Reads the values of a Cars object by its key.</summary>
+          </doc>
+        </operation>
+        <operation name="create">
+          <input arg="data">
+            <param name="name"/>
+            <param name="quantity"/>
+            <param name="type"/>
+          </input>
+          <output>
+            <param name="id"/>
+          </output>
+          <config>
+            <rest:method verb="POST" uri-template="cars"/>
+          </config>
+          <doc>
+            <summary>Creates a new Cars object using the specified data.</summary>
+          </doc>
+        </operation>
+        <operation name="update">
+          <input>
+            <param name="id"/>
+            <struct name="data">
+              <param name="name"/>
+              <param name="quantity"/>
+              <param name="type"/>
+              <config>
+                <xfk:add-to-object class="CarsObject"/>
+              </config>
+            </struct>
+          </input>
+          <config>
+            <rest:method verb="PUT" uri-template="cars/{id}"/>
+          </config>
+          <doc>
+            <summary>Updates existing Cars object using the specified data.</summary>
+          </doc>
+        </operation>
+        <operation name="delete">
+          <input>
+            <param name="id"/>
+          </input>
+          <config>
+            <rest:method verb="DELETE" uri-template="cars/{id}"/>
+          </config>
+          <doc>
+            <summary>Deletes the specified Cars object.</summary>
+          </doc>
+        </operation>
+        <operation name="read list">
+          <input>
+            <struct name="criteria">
+              <param name="name operator" type="operator">
+                <doc>
+                  <summary>Comparison operator for the corresponding Name criteria.</summary>
+                </doc>
+              </param>
+              <param name="name" required="false"/>
+              <param name="quantity operator" type="operator">
+                <doc>
+                  <summary>Comparison operator for the corresponding Quantity criteria.</summary>
+                </doc>
+              </param>
+              <param name="quantity" required="false"/>
+              <param name="quantity2" type="numeric_18_0" required="false">
+                <doc>
+                  <summary>End of range for the corresponding Quantity criteria for the BETWEEN operator.</summary>
+                </doc>
+              </param>
+              <param name="type operator" type="operator">
+                <doc>
+                  <summary>Comparison operator for the corresponding Type criteria.</summary>
+                </doc>
+              </param>
+              <param name="type" required="false"/>
+              <config>
+                <xfk:data-object class="CarsCriteria"/>
+              </config>
+            </struct>
+          </input>
+          <output list="true">
+            <param name="id"/>
+            <param name="name"/>
+            <param name="quantity"/>
+            <param name="type"/>
+            <config>
+              <xfk:data-object class="CarsList"/>
+            </config>
+          </output>
+          <config>
+            <rest:method verb="GET" uri-template="cars?{criteria}"/>
+          </config>
+          <doc>
+            <summary>Reads a list of Cars objects based on the specified criteria.</summary>
+          </doc>
+        </operation>
+        <doc>
+          <summary>A service for quering and managing Cars objects.</summary>
+        </doc>
+      </operations>
+      <config>
+        <sql:table name="cars"/>
+      </config>
+    </object>
+  </objects>
+</module>

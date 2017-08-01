@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://www.xomega.net/omodel" xmlns:xfk="http://www.xomega.net/framework"
+        xmlns:wcf="http://www.xomega.net/wcf"
+        xmlns:rest="http://www.xomega.net/rest"
+        xmlns:ui="http://www.xomega.net/ui"
+        xmlns:asp="clr-namespace:System.Web.UI.WebControls"
+        xmlns:sql="http://www.xomega.net/sql"
+        xmlns:clr="http://www.xomega.net/clr"
+        xmlns:edm="http://www.xomega.net/edm">
+  <types>
+    <type name="tbl user" base="integer key"/>
+  </types>
+  <objects>
+    <object name="tbl user">
+      <fields>
+        <field name="id" type="tbl user" key="serial" required="true">
+          <config>
+            <sql:column name="Id"/>
+          </config>
+        </field>
+        <field name="first name" type="string250">
+          <config>
+            <sql:column name="FirstName"/>
+          </config>
+        </field>
+        <field name="last name" type="string250">
+          <config>
+            <sql:column name="LastName"/>
+          </config>
+        </field>
+        <field name="gender" type="string250">
+          <config>
+            <sql:column name="Gender"/>
+          </config>
+        </field>
+      </fields>
+      <config>
+        <sql:table name="TblUser"/>
+      </config>
+    </object>
+  </objects>
+</module>

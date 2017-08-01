@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://www.xomega.net/omodel" xmlns:xfk="http://www.xomega.net/framework"
+        xmlns:wcf="http://www.xomega.net/wcf"
+        xmlns:rest="http://www.xomega.net/rest"
+        xmlns:ui="http://www.xomega.net/ui"
+        xmlns:asp="clr-namespace:System.Web.UI.WebControls"
+        xmlns:sql="http://www.xomega.net/sql"
+        xmlns:clr="http://www.xomega.net/clr"
+        xmlns:edm="http://www.xomega.net/edm"
+        name="common">
+  <types>
+    <type name="numeric_18_0" base="numeric">
+      <config>
+        <sql:type name="numeric(18,0)" db="sqlsrv"/>
+      </config>
+    </type>
+    <type name="string250" base="string" size="250"/>
+    <type name="string50" base="string" size="50"/>
+  </types>
+</module>
