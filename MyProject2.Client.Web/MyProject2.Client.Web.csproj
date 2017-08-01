@@ -255,6 +255,8 @@
       <Compile Include="WebAPI\_CarsController.cs">
          <AutoGen>True</AutoGen>
       </Compile>
+      <Content Include="Spa\Views\_CarsObjectView.html"/>
+      <TypeScriptCompile Include="Spa\Views\_CarsObjectView.ts"/>
       <Content Include="index.cshtml"/>
   </ItemGroup>
   <ItemGroup>
